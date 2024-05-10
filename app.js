@@ -23,6 +23,10 @@ const app = express();
 
 app.use(express.json()); // Para poder parsear JSON
 
+app.get('/', (req, res) => {
+    res.send('API REST de Moviles II');
+});
+
 // Rutas para libros
 app.get('/libros', async (req, res) => {
     const librosSnapshot = await db.collection('libros').get();
